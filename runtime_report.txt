@@ -1,0 +1,23 @@
+When MergeSort and BubbleSort are run on small sets of data, the difference in 
+runtime is extremely small (many times undetectable without the use of some kind of 
+timer to compute the CPU time used by a C++ function). For instance, my program took 2*10^(-6) seconds to
+use BubbleSort and 1.4*10^(-5) seconds to use MergeSort on the same small set of 
+10 data items. However, for much larger data sets, the differences in complexity between the 
+two algorithms become much more apparent. In the big-O notation (which gives the worst case scenario runtime
+for a data set, n; this is the time complexity, which is dependent on the number of execution steps), 
+MergeSort has a complexity of O(nlog(n)) because dividing an input in half until a list of 1
+element is reached requires log(n) partioning levels, and, at each level, the algorithm does n comparisons to select
+and copy elements from the right and left partitions (for a total of n*log(n) comparisons). BubbleSort, however, has a
+complexity of O(n^2) because n-1 comparisons will be done in the first pass, n-2 comparisons in the second pass, etc.,
+ultimately yielding n(n-1)/2 comparions. Thus, the big-O notation for BubbleSort is O(n^2). Assuming that the
+algorithms are operating on the same data set, the big-O notation tells us that BubbleSort (O(n^2)) will 
+take a longer time to execute than MergeSort ((O(nlog(n)))). For the very large data set
+(MaxSize=2100000), MergeSort took a reasonable 0.382485 seconds to execute. On the other hand,
+Bubble Sort took 1581.37 seconds (26.356 minutes) to run. Obviously, my results are consistent with
+the analytical running times of these algorithms (in terms of the big-O notation). The runtime advantages of a lower-complexity
+algorithm become much clearer with large data sets such as these. Of course, the relative efficiency of a given
+algorithm depends also on the particular code implementation of that algorithm. For instance, if BubbleSort is efficiently coded, but
+MergeSort is not, there may be slight anomalies between theoretical expectations and practically obtained results when it comes
+to running times (MergeSort may not run as fast as it could). Also, there are cases in which a very large c (constant) value
+can skew the outcome of a complexity comparison between two algorithms. Finally, the final running times will depend on many factors
+such as available memory space, processor speed, etc.; however, the advantages of MergeSort should still be apparent.
